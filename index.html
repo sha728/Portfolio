@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Shaik Shahid Hussain | Data Scientist & AI Engineer</title>
+    <meta name="description" content="Portfolio of Shaik Shahid Hussain, a Data Scientist & AI Engineer specializing in Machine Learning, NLP, LLMs, and RAG pipelines. Explore interactive ML demos and career roadmaps.">
+    <meta name="keywords" content="Data Scientist, AI Engineer, Machine Learning, NLP, LLMs, Generative AI, RAG, Python, Portfolio, Shaik Shahid Hussain">
+    
+    <meta property="og:title" content="Shaik Shahid Hussain | Data Scientist & AI Engineer">
+    <meta property="og:description" content="Explore my portfolio, interactive machine learning project simulations, and digital AI resume assistant.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shahid-portfolio-1.vercel.app/">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+
+    <canvas id="particle-canvas"></canvas>
+
+    <div id="cursor-glow"></div>
+
+    <nav class="navbar glass-panel">
+        <div class="nav-container">
+            <a href="#home" class="logo-text">
+                <span class="gradient-text">Shahid</span><span class="logo-sub">.ai</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#playground" class="nav-link">Demos</a></li>
+                <li><a href="#certifications" class="nav-link">Credentials</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-badge glass-panel" data-reveal="fade-down">
+                    <span class="pulse-dot"></span> Available for Internships & Full-time Roles
+                </div>
+                <h1 data-reveal="fade-up">
+                    Hi, I'm <span class="gradient-text">Shaik Shahid Hussain</span>
+                </h1>
+                <h2 data-reveal="fade-up" data-delay="100">
+                    I am a <span id="typewriter" class="accent-text"></span><span class="cursor">|</span>
+                </h2>
+                <p class="hero-subtitle" data-reveal="fade-up" data-delay="200">
+                    Data Scientist and AI Engineer who bridges the gap between raw data, machine learning pipelines, and user-facing business applications. Specializing in NLP, Large Language Models (LLMs), and interactive data systems.
+                </p>
+                <div class="hero-ctas" data-reveal="fade-up" data-delay="300">
+                    <a href="#playground" class="btn btn-primary">Try Interactive Demos</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-scroll" data-reveal="fade-in" data-delay="500">
+                <a href="#about" class="scroll-indicator">
+                    <span>Scroll Down</span>
+                    <i class="fa-solid fa-chevron-down bounce"></i>
+                </a>
+            </div>
+        </section>
+
+        <section id="about" class="section about-section">
+            <div class="section-header" data-reveal="fade-up">
+                <span class="section-tag">Overview</span>
+                <h2>About Me</h2>
+                <div class="header-line"></div>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-visual" data-reveal="fade-right">
+                    <div class="profile-frame">
+                        <img src="assets/images/shahid1.jpeg" alt="Shaik Shahid Hussain" class="profile-img">
+                        <div class="frame-border"></div>
+                    </div>
+                </div>
+                
+                <div class="about-details" data-reveal="fade-left">
+                    <h3 class="about-headline">Solving Real-World Problems Through Structured Data Science</h3>
+                    <p class="about-text">
+                        I am a B.Tech graduate in Computer Science & Engineering from <strong>Lovely Professional University</strong> (Class of 2026). I have hands-on experience building, training, and deploying end-to-end Machine Learning pipelines. From problem framing and feature engineering to model deployment and drift evaluation, I enjoy the entire lifecycle of data systems.
+                    </p>
+                    <p class="about-text">
+                        My primary interest lies in Natural Language Processing (NLP) and Generative AI. I develop agentic workflows, prompt-engineered pipelines, and retrieval-augmented systems that translate ambiguous customer queries or messy text datasets into business outcomes.
+                    </p>
+                    
+                    <div class="stats-dashboard">
+                        <div class="stat-card glass-panel">
+                            <span class="stat-value gradient-text">7.4</span>
+                            <span class="stat-label">LPU CGPA</span>
+                        </div>
+                        <div class="stat-card glass-panel">
+                            <span class="stat-value gradient-text">3+</span>
+                            <span class="stat-label">ML Projects</span>
+                        </div>
+                        <div class="stat-card glass-panel">
+                            <span class="stat-value gradient-text">5+</span>
+                            <span class="stat-label">Certifications</span>
+                        </div>
+                    </div>
+
+                    <div class="about-actions">
+                        <a href="assets/docs/resume.pdf" class="btn btn-primary" download="Shaik_Shahid_Hussain_Resume.pdf">
+                            <i class="fa-solid fa-download"></i> Download Resume PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section skills-section">
+            <div class="section-header" data-reveal="fade-up">
+                <span class="section-tag">Expertise</span>
+                <h2>Technical Toolkit</h2>
+                <div class="header-line"></div>
+            </div>
+
+            <p class="section-intro" data-reveal="fade-up">
+                Hover or click on skills to see how I apply them to build production-grade machine learning pipelines.
+            </p>
+
+            <div class="skills-grid" data-reveal="fade-up">
+                
+                <div class="skill-category-card glass-panel">
+                    <div class="category-header">
+                        <i class="fa-solid fa-brain category-icon"></i>
+                        <h3>Machine Learning & Stats</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-tag" data-desc="Supervised/unsupervised models, model evaluations, and hyperparameter tuning.">scikit-learn</div>
+                        <div class="skill-tag" data-desc="Deep learning model design and training.">PyTorch</div>
+                        <div class="skill-tag" data-desc="Neural network implementation and training optimizations.">TensorFlow</div>
+                        <div class="skill-tag" data-desc="Transfer learning and NLP pipelines using pre-trained transformers.">HuggingFace</div>
+                        <div class="skill-tag" data-desc="Sentiment classification and fine-tuning for mood classification.">RoBERTa</div>
+                        <div class="skill-tag" data-desc="Data distributions, regression modeling, hypothesis testing, A/B analysis.">Statistical Analysis</div>
+                    </div>
+                </div>
+
+                <div class="skill-category-card glass-panel">
+                    <div class="category-header">
+                        <i class="fa-solid fa-robot category-icon"></i>
+                        <h3>AI & Generative AI</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-tag" data-desc="Integrating Gemini/GPT API layers as reasoners in software solutions.">LLM Integration</div>
+                        <div class="skill-tag" data-desc="Context-aware system design combining vector stores and semantic search.">RAG Pipelines</div>
+                        <div class="skill-tag" data-desc="Structuring complex tasks into autonomous steps with LLMs.">Agentic Workflows</div>
+                        <div class="skill-tag" data-desc="Optimizing text instructions to minimize hallucination and yield structured JSON.">Prompt Engineering</div>
+                        <div class="skill-tag" data-desc="Setting validation checks and evaluation loops on model generations.">Hallucination Monitoring</div>
+                    </div>
+                </div>
+
+                <div class="skill-category-card glass-panel">
+                    <div class="category-header">
+                        <i class="fa-solid fa-code category-icon"></i>
+                        <h3>Languages & Querying</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-tag" data-desc="Primary language for scripting, machine learning, and data pipelines.">Python</div>
+                        <div class="skill-tag" data-desc="Writing robust database queries, aggregations, and subqueries.">SQL</div>
+                        <div class="skill-tag" data-desc="Object-oriented programming, data structures, and algorithms.">Java</div>
+                        <div class="skill-tag" data-desc="Creating structural templates for standard responsive frontends.">HTML5</div>
+                        <div class="skill-tag" data-desc="Custom grid alignments, transitions, animations, and variables.">CSS3</div>
+                    </div>
+                </div>
+
+                <div class="skill-category-card glass-panel">
+                    <div class="category-header">
+                        <i class="fa-solid fa-chart-simple category-icon"></i>
+                        <h3>Data Analysis & Insights</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-tag" data-desc="Tabular data wrangling, cleaning, pivot analysis, and plotting.">Pandas</div>
+                        <div class="skill-tag" data-desc="Matrix calculations, vectorization, and mathematical modeling.">NumPy</div>
+                        <div class="skill-tag" data-desc="Creating descriptive charts and graphs to plot features and patterns.">Matplotlib / Seaborn</div>
+                        <div class="skill-tag" data-desc="Cleaning datasets, resolving missing values, and detecting anomalies.">Exploratory Data Analysis</div>
+                        <div class="skill-tag" data-desc="Translating business metrics into ML requirements and presenting to stakeholders.">A/B Thinking</div>
+                    </div>
+                </div>
+
+                <div class="skill-category-card glass-panel">
+                    <div class="category-header">
+                        <i class="fa-solid fa-cubes category-icon"></i>
+                        <h3>Tools & Deployment</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-tag" data-desc="Building reactive web dashboards for data applications.">Streamlit</div>
+                        <div class="skill-tag" data-desc="Developing high-performance REST APIs with asynchronous routes.">FastAPI</div>
+                        <div class="skill-tag" data-desc="Hosting servers, data assets, and setting up storage instances.">AWS</div>
+                        <div class="skill-tag" data-desc="Containerizing scripts and environments for deterministic deployments.">Docker</div>
+                        <div class="skill-tag" data-desc="Relational database schema modeling and query execution.">MySQL</div>
+                        <div class="skill-tag" data-desc="NoSQL database schema design and integration.">MongoDB</div>
+                        <div class="skill-tag" data-desc="Automating testing and validation checks on new version releases.">CI/CD Pipelines</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="skill-info-panel" class="skill-info-panel glass-panel hidden">
+                <i class="fa-solid fa-circle-info panel-icon"></i>
+                <div class="panel-content">
+                    <h4 id="panel-skill-name">Skill Name</h4>
+                    <p id="panel-skill-desc">Hover over a skill tag to inspect technical details and real-world deployment cases.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="playground" class="section playground-section">
+            <div class="section-header" data-reveal="fade-up">
+                <span class="section-tag">Interactive Lab</span>
+                <h2>Project Playgrounds</h2>
+                <div class="header-line"></div>
+            </div>
+
+            <p class="section-intro" data-reveal="fade-up">
+                Instead of just reading descriptions, interact with live simulated models representing my core portfolio projects below.
+            </p>
+
+            <div class="playground-container glass-panel" data-reveal="fade-up">
+                
+                <div class="playground-tabs">
+                    <button class="tab-btn active" data-tab="book-recommender">
+                        <i class="fa-solid fa-book-open"></i> Mood Recommender
+                    </button>
+                    <button class="tab-btn" data-tab="career-agent">
+                        <i class="fa-solid fa-road"></i> Career AI Agent
+                    </button>
+                    <button class="tab-btn" data-tab="pack-vote">
+                        <i class="fa-solid fa-plane-departure"></i> PackVote System
+                    </button>
+                </div>
+
+                <div class="playground-body">
+                    
+                    <div class="tab-content active" id="book-recommender">
+                        <div class="project-info">
+                            <h3>Mood-Based Book Recommendation System</h3>
+                            <p class="tech-stack-labels">
+                                <span>Python</span><span>NLP</span><span>scikit-learn</span><span>PyTorch</span><span>RoBERTa</span><span>Streamlit</span>
+                            </p>
+                            <p class="project-summary-text">
+                                Framed book recommendation as a structured NLP pipeline. Features automated mood detection via a fine-tuned <strong>RoBERTa</strong> sentiment model, converting qualitative emotional inputs into similarity scores.
+                            </p>
+                            <ul class="project-bullets">
+                                <li>Transforms user emotional text state into quantitative vector inputs.</li>
+                                <li>Employs Cosine Similarity to match emotional states to annotated book datasets.</li>
+                                <li>Robust CI/CD validation checks that monitor prediction drift.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="interactive-demo glass-panel">
+                            <h4>Interactive Demo: Simulating Sentiment & Search</h4>
+                            <p class="demo-prompt">Type how you feel, or select a pre-set mood to see the recommendation logic:</p>
+                            
+                            <div class="mood-selectors">
+                                <button class="mood-btn" data-text="I'm feeling completely stressed, overwhelmed with work, and need a peaceful world to escape into.">Peaceful Escape</button>
+                                <button class="mood-btn" data-text="I feel extremely curious, ambitious, and ready to learn how the brain works or solve mysteries.">Curious & Analytical</button>
+                                <button class="mood-btn" data-text="I'm looking for a highly inspiring, emotional story that will make me think and touch my heart.">Inspiring & Emotional</button>
+                            </div>
+
+                            <div class="demo-input-group">
+                                <textarea id="recommender-input" placeholder="Type your mood in detail (e.g., 'A rainy evening, feeling nostalgic and wanting a quiet detective story...')." rows="3"></textarea>
+                                <button id="btn-run-recommender" class="btn btn-primary btn-run">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i> Run Mood Inference
+                                </button>
+                            </div>
+
+                            <div id="recommender-output" class="demo-output hidden">
+                                <div class="inference-loader">
+                                    <span class="spinner"></span>
+                                    <span class="loader-text">Analyzing text with RoBERTa Model...</span>
+                                </div>
+                                <div class="inference-results hidden">
+                                    <h5>RoBERTa Emotion Probability Vectors</h5>
+                                    <div class="chart-container">
+                                        <div class="bar-row"><span class="bar-label">Serenity:</span><div class="bar-wrapper"><div class="bar" id="bar-serenity"></div></div><span class="bar-pct" id="pct-serenity">0%</span></div>
+                                        <div class="bar-row"><span class="bar-label">Melancholy:</span><div class="bar-wrapper"><div class="bar" id="bar-melancholy"></div></div><span class="bar-pct" id="pct-melancholy">0%</span></div>
+                                        <div class="bar-row"><span class="bar-label">Excitement:</span><div class="bar-wrapper"><div class="bar" id="bar-excitement"></div></div><span class="bar-pct" id="pct-excitement">0%</span></div>
+                                        <div class="bar-row"><span class="bar-label">Tension:</span><div class="bar-wrapper"><div class="bar" id="bar-tension"></div></div><span class="bar-pct" id="pct-tension">0%</span></div>
+                                    </div>
+                                    <div class="rec-book-card glass-panel">
+                                        <div class="rec-book-cover"><i class="fa-solid fa-book"></i></div>
+                                        <div class="rec-book-details">
+                                            <h6 id="rec-book-title">The Hobbit</h6>
+                                            <p class="rec-book-author" id="rec-book-author">J.R.R. Tolkien</p>
+                                            <p class="rec-book-desc" id="rec-book-desc">A peaceful but adventurous escape into Middle-earth.</p>
+                                            <div class="similarity-badge"><i class="fa-solid fa-circle-check"></i> Cosine Similarity Match: <strong id="rec-similarity">94.8%</strong></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="career-agent">
+                        <div class="project-info">
+                            <h3>Career AI Agent: Resume & GitHub Roadmap Generator</h3>
+                            <p class="tech-stack-labels">
+                                <span>Python</span><span>NLP</span><span>LLMs</span><span>Generative AI</span><span>FastAPI</span><span>Streamlit</span>
+                            </p>
+                            <p class="project-summary-text">
+                                An analytical AI pipeline that parses unstructured resume PDFs and GitHub profile data to conduct a <strong>skills gap analysis</strong> against target industry benchmarks, dynamically outputting a personalized learning roadmap.
+                            </p>
+                            <ul class="project-bullets">
+                                <li>NLP parser extracts key concepts, skill counts, and repository metrics without manual tags.</li>
+                                <li>Reasoning agent evaluates current skillset against typical career requirements.</li>
+                                <li>Iterative system prompting and validation layers to minimize hallucinations.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="interactive-demo glass-panel">
+                            <h4>Interactive Demo: Simulated Gap Analysis & Roadmapper</h4>
+                            <p class="demo-prompt">Select your target career path and primary skill level to see the roadmap generator formulate milestones:</p>
+                            
+                            <div class="roadmap-inputs">
+                                <div class="form-group">
+                                    <label for="target-role">Target Role:</label>
+                                    <select id="target-role">
+                                        <option value="data-scientist">Data Scientist (ML Focus)</option>
+                                        <option value="mlops-engineer">MLOps / AI Deployment Engineer</option>
+                                        <option value="nlp-engineer">NLP & Generative AI Specialist</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="current-skill">Your Core Skill:</label>
+                                    <select id="current-skill">
+                                        <option value="python-only">Basic Python & Scripting</option>
+                                        <option value="data-analyst">Data Analysis & SQL (Pandas/Excel)</option>
+                                        <option value="ml-basics">Basic ML Modeling (scikit-learn)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button id="btn-run-roadmap" class="btn btn-primary btn-run">
+                                <i class="fa-solid fa-road"></i> Analyze Gap & Generate Roadmap
+                            </button>
+
+                            <div id="roadmap-output" class="demo-output hidden">
+                                <div class="inference-loader">
+                                    <span class="spinner"></span>
+                                    <span class="loader-text">Parsing skills... Fetching benchmarks... Synthesizing roadmap...</span>
+                                </div>
+                                <div class="inference-results hidden">
+                                    <h5>Skills Gap Analysis Results</h5>
+                                    <div class="gap-tags">
+                                        <span class="gap-tag missing">Missing Core: <strong id="roadmap-gap">PyTorch, Docker, CI/CD</strong></span>
+                                        <span class="gap-tag matched">Verified Skills: <strong id="roadmap-verified">Python, Pandas, SQL</strong></span>
+                                    </div>
+                                    <div class="roadmap-timeline">
+                                        <div class="timeline-step">
+                                            <div class="step-num">1</div>
+                                            <div class="step-content">
+                                                <h6>Phase 1: Foundation Bridging</h6>
+                                                <p id="step-1-text">Master NumPy, Pandas, SQL joins, and exploratory data analysis workflows.</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-num">2</div>
+                                            <div class="step-content">
+                                                <h6>Phase 2: Core Machine Learning & Statistics</h6>
+                                                <p id="step-2-text">Implement regression, decision trees, cross-validations, and feature engineering structures.</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-step">
+                                            <div class="step-num">3</div>
+                                            <div class="step-content">
+                                                <h6>Phase 3: Deep Dive / Deployment</h6>
+                                                <p id="step-3-text">Learn neural networks, deploy Streamlit dashboards, containerize applications with Docker.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="pack-vote">
+                        <div class="project-info">
+                            <h3>PackVote: Group Travel Consensus System</h3>
+                            <p class="tech-stack-labels">
+                                <span>Python</span><span>Cosine Similarity</span><span>Gemini API</span><span>FastAPI</span><span>REST APIs</span>
+                            </p>
+                            <p class="project-summary-text">
+                                Resolves multi-stakeholder preference conflicts by gathering individual budget constraints, location vibes, and activity priorities. Uses <strong>cosine similarity ranking</strong> and Google Gemini API to design group consensus itineraries.
+                            </p>
+                            <ul class="project-bullets">
+                                <li>Gathers multi-user preference vectors and computes centroid preferences.</li>
+                                <li>Applies heuristic cost-estimation modules matching tight budget constraints.</li>
+                                <li>Integrates LLM reasoning as an itinerary synthesizer.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="interactive-demo glass-panel">
+                            <h4>Interactive Demo: Cosine Consensus Calculator</h4>
+                            <p class="demo-prompt">Select budget boundaries and trip vibes for three travelers to run the vector comparison:</p>
+                            
+                            <div class="packvote-inputs">
+                                <div class="user-preference-row">
+                                    <span class="user-label">Traveler 1:</span>
+                                    <select id="user1-vibe">
+                                        <option value="beach">Beach & Relaxation</option>
+                                        <option value="adventure">Mountain Trekking</option>
+                                        <option value="heritage">Heritage & Temples</option>
+                                    </select>
+                                    <select id="user1-budget">
+                                        <option value="low">Budget (Low)</option>
+                                        <option value="med">Moderate</option>
+                                    </select>
+                                </div>
+                                <div class="user-preference-row">
+                                    <span class="user-label">Traveler 2:</span>
+                                    <select id="user2-vibe">
+                                        <option value="beach">Beach & Relaxation</option>
+                                        <option value="adventure" selected>Mountain Trekking</option>
+                                        <option value="heritage">Heritage & Temples</option>
+                                    </select>
+                                    <select id="user2-budget">
+                                        <option value="low">Budget (Low)</option>
+                                        <option value="med" selected>Moderate</option>
+                                    </select>
+                                </div>
+                                <div class="user-preference-row">
+                                    <span class="user-label">Traveler 3:</span>
+                                    <select id="user3-vibe">
+                                        <option value="beach">Beach & Relaxation</option>
+                                        <option value="adventure">Mountain Trekking</option>
+                                        <option value="heritage" selected>Heritage & Temples</option>
+                                    </select>
+                                    <select id="user3-budget">
+                                        <option value="low" selected>Budget (Low)</option>
+                                        <option value="med">Moderate</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button id="btn-run-consensus" class="btn btn-primary btn-run">
+                                <i class="fa-solid fa-calculator"></i> Compute Consensus Ranking
+                            </button>
+
+                            <div id="packvote-output" class="demo-output hidden">
+                                <div class="inference-loader">
+                                    <span class="spinner"></span>
+                                    <span class="loader-text">Calculating preference vectors... Running similarity ranking... Synthesizing itineraries...</span>
+                                </div>
+                                <div class="inference-results hidden">
+                                    <h5>Group Recommendation Engine Outputs</h5>
+                                    <div class="destination-list">
+                                        <div class="dest-item">
+                                            <div class="dest-rank">#1</div>
+                                            <div class="dest-details">
+                                                <div class="dest-header">
+                                                    <h6>Hampi, Karnataka</h6>
+                                                    <span class="dest-score">91% Similarity Match</span>
+                                                </div>
+                                                <p>Excellent balance of heritage ruins, minor hikes/climbs, and highly cost-effective guest housing matching Low Budget profiles.</p>
+                                            </div>
+                                        </div>
+                                        <div class="dest-item">
+                                            <div class="dest-rank">#2</div>
+                                            <div class="dest-details">
+                                                <div class="dest-header">
+                                                    <h6>Gokarna, Karnataka</h6>
+                                                    <span class="dest-score">83% Similarity Match</span>
+                                                </div>
+                                                <p>Offers tranquil beaches combined with cost-effective options, partially matching mountain trekking urges with coastal cliffs.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="consensus-itinerary glass-panel">
+                                        <h6><i class="fa-solid fa-compass"></i> AI Synthesized Centroid Itinerary Summary:</h6>
+                                        <p id="consensus-itinerary-text">Morning hikes in Hampi ruins (Traveler 2), afternoon exploring viral temple history (Traveler 3), and relaxing sunset by Sanapur lake coracle rides (Traveler 1). All optimized within 1,500 INR per day per head budget restrictions.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="section cert-section">
+            <div class="section-header" data-reveal="fade-up">
+                <span class="section-tag">Credentials</span>
+                <h2>Certifications & Accomplishments</h2>
+                <div class="header-line"></div>
+            </div>
+
+            <div class="cert-filters" data-reveal="fade-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ds">Data Science & ML</button>
+                <button class="filter-btn" data-filter="core">Core Engineering & Cloud</button>
+            </div>
+
+            <div class="cert-grid" data-reveal="fade-up">
+                
+                <div class="cert-card glass-panel" data-category="ds">
+                    <div class="cert-image-container">
+                        <img src="assets/images/ibm_ds_methodology.png" alt="Data Science Methodology - IBM" class="cert-img">
+                        <div class="cert-overlay">
+                            <span class="view-btn"><i class="fa-solid fa-expand"></i> View Large</span>
+                        </div>
+                    </div>
+                    <div class="cert-info">
+                        <span class="cert-issuer">IBM</span>
+                        <h4>Data Science Methodology</h4>
+                        <p class="cert-date">Issued: March 24, 2026</p>
+                        <p class="cert-desc">Focuses on structural stages for framing, modeling, evaluating, and addressing data science challenges.</p>
+                    </div>
+                </div>
+
+                <div class="cert-card glass-panel" data-category="core">
+                    <div class="cert-image-container">
+                        <img src="assets/images/ibm_big_data.png" alt="Big Data 101 - IBM" class="cert-img">
+                        <div class="cert-overlay">
+                            <span class="view-btn"><i class="fa-solid fa-expand"></i> View Large</span>
+                        </div>
+                    </div>
+                    <div class="cert-info">
+                        <span class="cert-issuer">IBM</span>
+                        <h4>Big Data 101</h4>
+                        <p class="cert-date">Issued: March 24, 2026</p>
+                        <p class="cert-desc">Covers core concepts of Hadoop ecosystems, Spark engines, and scalable MapReduce architectures.</p>
+                    </div>
+                </div>
+
+                <div class="cert-card glass-panel" data-category="ds">
+                    <div class="cert-image-container">
+                        <img src="assets/images/deloitte_data_analytics.png" alt="Data Analytics Job Simulation - Deloitte" class="cert-img">
+                        <div class="cert-overlay">
+                            <span class="view-btn"><i class="fa-solid fa-expand"></i> View Large</span>
+                        </div>
+                    </div>
+                    <div class="cert-info">
+                        <span class="cert-issuer">Deloitte</span>
+                        <h4>Data Analytics Job Simulation</h4>
+                        <p class="cert-date">Issued: February 18, 2026</p>
+                        <p class="cert-desc">Completed practical tasks in exploratory data analysis and forensic technology, mimicking real consultant workflows.</p>
+                    </div>
+                </div>
+
+                <div class="cert-card glass-panel" data-category="ds">
+                    <div class="cert-image-container">
+                        <img src="assets/images/ihub_ml_applications.png" alt="Machine Learning & Its Applications - iHUB DivyaSampark" class="cert-img">
+                        <div class="cert-overlay">
+                            <span class="view-btn"><i class="fa-solid fa-expand"></i> View Large</span>
+                        </div>
+                    </div>
+                    <div class="cert-info">
+                        <span class="cert-issuer">iHUB DivyaSampark, IIT Roorkee</span>
+                        <h4>Machine Learning & Its Applications</h4>
+                        <p class="cert-date">Issued: September 20, 2024</p>
+                        <p class="cert-desc">Completed a certified machine learning course conducted by iHUB DivyaSampark at LPU Punjab, exploring model training and pipeline architectures.</p>
+                    </div>
+                </div>
+
+                <div class="cert-card glass-panel" data-category="core">
+                    <div class="cert-image-container">
+                        <img src="assets/images/linkedin_nlp_ml.png" alt="NLP with Python for Machine Learning - LinkedIn Learning" class="cert-img">
+                        <div class="cert-overlay">
+                            <span class="view-btn"><i class="fa-solid fa-expand"></i> View Large</span>
+                        </div>
+                    </div>
+                    <div class="cert-info">
+                        <span class="cert-issuer">LinkedIn Learning</span>
+                        <h4>NLP with Python for ML</h4>
+                        <p class="cert-date">Issued: February 10, 2023</p>
+                        <p class="cert-desc">Advanced training in text preprocessing, tokenization, vectorization, and building machine learning models for language tasks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="section achievements-section">
+            <div class="section-header" data-reveal="fade-up">
+                <span class="section-tag">Competitions & Awards</span>
+                <h2>Key Achievements</h2>
+                <div class="header-line"></div>
+            </div>
+
+            <div class="achievements-grid" data-reveal="fade-up">
+                
+                <div class="achievement-card-new glass-panel">
+                    <div class="ach-badge-glow">
+                        <i class="fa-solid fa-trophy text-glow-cyan"></i>
+                    </div>
+                    <div class="ach-content-new">
+                        <span class="ach-issuer-new">Lovely Professional University</span>
+                        <h3>Runner-Up, Group Discussion Competition</h3>
+                        <span class="ach-date-new">April 2025</span>
+                        <p>Demonstrated strong communication, leadership, and group dynamics by presenting complex analytical findings and data-driven recommendations to mixed audiences, directly proving capability in influencing stakeholders.</p>
+                    </div>
+                </div>
+
+                <div class="achievement-card-new glass-panel">
+                    <div class="ach-badge-glow">
+                        <i class="fa-solid fa-award text-glow-purple"></i>
+                    </div>
+                    <div class="ach-content-new">
+                        <span class="ach-issuer-new">LPU Workshop</span>
+                        <h3>Runner-Up, Critical Thinking Challenge</h3>
+                        <span class="ach-date-new">September 2023</span>
+                        <p>Applied structured decomposition of ambiguous, multi-variable analytical problems under tight timelines, mirroring the data science process of translating complex open-ended business questions into models.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="section-header" data-reveal="fade-up">
+                <span class="section-tag">Let's Connect</span>
+                <h2>Get In Touch</h2>
+                <div class="header-line"></div>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card-info" data-reveal="fade-right">
+                    <h3>Let's collaborate on data solutions</h3>
+                    <p>
+                        Are you looking for an ML practitioner who can dissect a business challenge, build model code, and deploy interactive dashboards? Reach out!
+                    </p>
+
+                    <div class="info-items">
+                        <a href="mailto:shahussain891@gmail.com" class="info-item glass-panel">
+                            <i class="fa-solid fa-envelope info-icon"></i>
+                            <div class="info-details">
+                                <span class="info-label">Email Me</span>
+                                <span class="info-value">shahussain891@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="tel:+919701105237" class="info-item glass-panel">
+                            <i class="fa-solid fa-phone info-icon"></i>
+                            <div class="info-details">
+                                <span class="info-label">Call / WhatsApp</span>
+                                <span class="info-value">+91 9701105237</span>
+                            </div>
+                        </a>
+                        <div class="info-item glass-panel">
+                            <i class="fa-solid fa-location-dot info-icon"></i>
+                            <div class="info-details">
+                                <span class="info-label">Location</span>
+                                <span class="info-value">Bengaluru, Karnataka, India</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links-row">
+                        <a href="https://github.com/Shahid12201307" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/shahid-s/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-container" data-reveal="fade-left">
+                    <form id="portfolio-contact-form" class="contact-form glass-panel">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-name">Name</label>
+                                <input type="text" id="form-name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Email</label>
+                                <input type="email" id="form-email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-subject">Subject</label>
+                            <input type="text" id="form-subject" placeholder="Project Collaboration Opportunity" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">Message</label>
+                            <textarea id="form-message" placeholder="Hi Shahid, I saw your interactive ML lab and would like to discuss..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span>Send Message</span> <i class="fa-regular fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div id="form-success-message" class="form-success glass-panel hidden">
+                        <i class="fa-solid fa-circle-check success-icon"></i>
+                        <h3>Message Transmitted Successfully!</h3>
+                        <p>Thank you for reaching out. I've received your request and will follow up within 24 hours.</p>
+                        <button id="btn-reset-form" class="btn btn-secondary">Send Another Message</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>© 2026 Shaik Shahid Hussain. Crafted from scratch with HTML, CSS, and Vanilla JS.</p>
+            <div class="footer-bottom-links">
+                <a href="#home">Back to Top <i class="fa-solid fa-arrow-up"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="chatbot-container" class="chatbot-container closed">
+        
+        <div class="chatbot-header">
+            <div class="chatbot-avatar-status">
+                <div class="bot-avatar"><i class="fa-solid fa-robot"></i></div>
+                <div class="bot-status-text">
+                    <h4>Shahid's Agent</h4>
+                    <span><span class="online-indicator"></span> Online</span>
+                </div>
+            </div>
+            <button id="chatbot-close" aria-label="Close Chat"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div id="chatbot-messages" class="chatbot-messages">
+            <div class="message bot-message">
+                <div class="message-text">
+                    Hello! I'm Shaik Shahid Hussain's AI assistant. Ask me anything about Shahid's technical skills, academic background, projects, or certifications!
+                </div>
+            </div>
+        </div>
+
+        <div class="chatbot-suggestions">
+            <button class="suggest-btn" data-query="core-skills">Core Skills</button>
+            <button class="suggest-btn" data-query="projects">Projects</button>
+            <button class="suggest-btn" data-query="education">Education</button>
+            <button class="suggest-btn" data-query="contact">Contact Info</button>
+        </div>
+
+        <div class="chatbot-input-area">
+            <input type="text" id="chatbot-input" placeholder="Type a question..." autocomplete="off">
+            <button id="chatbot-send" aria-label="Send Message"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <button id="chatbot-trigger" class="chatbot-trigger" aria-label="Ask Shahid AI">
+        <i class="fa-solid fa-comment-dots"></i>
+        <span class="trigger-tooltip">Ask Shahid AI</span>
+    </button>
+
+    <div id="cert-modal" class="cert-modal hidden">
+        <button id="modal-close" class="modal-close" aria-label="Close Modal"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-content">
+            <img id="modal-img" src="" alt="Enlarged Certificate">
+            <h3 id="modal-title">Certificate Title</h3>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
