@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const cursorGlow = document.getElementById('cursor-glow');
-    
+
     if (window.innerWidth > 768) {
         document.addEventListener('mousemove', (e) => {
             cursorGlow.style.opacity = '1';
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this.baseX = x;
             this.baseY = y;
             this.density = (Math.random() * 10) + 2;
-            
+
             this.vx = (Math.random() * 0.4 - 0.2);
             this.vy = (Math.random() * 0.4 - 0.2);
         }
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         update() {
-            
+
             this.x += this.vx;
             this.y += this.vy;
 
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (distance < mouse.radius) {
                     let force = (mouse.radius - distance) / mouse.radius;
                     let angle = Math.atan2(dy, dx);
-                    
+
                     this.x -= Math.cos(angle) * force * 2;
                     this.y -= Math.sin(angle) * force * 2;
                 }
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createParticles() {
         particles = [];
-        
+
         const count = window.innerWidth < 768 ? 40 : 100;
         for (let i = 0; i < count; i++) {
             let x = Math.random() * canvas.width;
@@ -190,20 +190,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isDeleting) {
             typewriter.textContent = currentRole.substring(0, charIdx - 1);
             charIdx--;
-            typingSpeed = 40; 
+            typingSpeed = 40;
         } else {
             typewriter.textContent = currentRole.substring(0, charIdx + 1);
             charIdx++;
-            typingSpeed = 100; 
+            typingSpeed = 100;
         }
 
         if (!isDeleting && charIdx === currentRole.length) {
             isDeleting = true;
-            typingSpeed = 1500; 
+            typingSpeed = 1500;
         } else if (isDeleting && charIdx === 0) {
             isDeleting = false;
             roleIdx = (roleIdx + 1) % roles.length;
-            typingSpeed = 500; 
+            typingSpeed = 500;
         }
 
         setTimeout(handleType, typingSpeed);
@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('scroll', checkReveal);
-    
+
     checkReveal();
 
     const skillTags = document.querySelectorAll('.skill-tag');
@@ -239,11 +239,11 @@ document.addEventListener('DOMContentLoaded', () => {
         tag.addEventListener('mouseenter', () => {
             const desc = tag.getAttribute('data-desc');
             const name = tag.textContent;
-            
+
             panelSkillName.textContent = name;
             panelSkillDesc.textContent = desc;
             infoPanel.classList.remove('hidden');
-            
+
             skillTags.forEach(t => t.classList.remove('active'));
             tag.classList.add('active');
         });
@@ -255,10 +255,10 @@ document.addEventListener('DOMContentLoaded', () => {
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const targetTab = btn.getAttribute('data-tab');
-            
+
             tabBtns.forEach(b => b.classList.remove('active'));
             tabContents.forEach(c => c.classList.remove('active'));
-            
+
             btn.classList.add('active');
             document.getElementById(targetTab).classList.add('active');
         });
@@ -381,14 +381,14 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (targetRole === 'mlops-engineer') {
                 missingStr = "Docker, CI/CD Pipelines, FastAPI, AWS cloud hosting";
                 verifiedStr = currentSkill === 'python-only' ? "Python foundations" : (currentSkill === 'data-analyst' ? "Python, SQL" : "Python, Scikit-Learn basics");
-                
+
                 step1 = "<strong>Phase 1 (APIs & Containers):</strong> Learn FastAPI for writing backend inference routes and build Docker container images.";
                 step2 = "<strong>Phase 2 (AWS Deployments):</strong> Configure AWS EC2 instances, S3 storage buckets, and secure environment keys.";
                 step3 = "<strong>Phase 3 (CI/CD Automations):</strong> Integrate GitHub Actions to automate lints, tests, and auto-build docker containers on push.";
-            } else { 
+            } else {
                 missingStr = "LLM APIs, Prompt Engineering, Vector Databases, RAG architectures";
                 verifiedStr = currentSkill === 'python-only' ? "Basic Python" : (currentSkill === 'data-analyst' ? "Python, Data Processing" : "Python, Scikit-Learn");
-                
+
                 step1 = "<strong>Phase 1 (NLP Core):</strong> Learn tokenization, TF-IDF, bag-of-words, and cosine similarity rankings.";
                 step2 = "<strong>Phase 2 (LLM Architectures):</strong> Study transformer mechanisms, integrate Google Gemini API endpoints, and structure JSON responses.";
                 step3 = "<strong>Phase 3 (RAG Frameworks):</strong> Build Retrieval-Augmented Generation systems using semantic search vector databases.";
@@ -443,7 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const filterValue = btn.getAttribute('data-filter');
-            
+
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
@@ -451,7 +451,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const category = card.getAttribute('data-category');
                 if (filterValue === 'all' || category === filterValue) {
                     card.style.display = 'flex';
-                    
+
                     card.style.opacity = '0';
                     setTimeout(() => { card.style.opacity = '1'; }, 50);
                 } else {
@@ -469,7 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     certImages.forEach(img => {
         img.addEventListener('click', () => {
-            
+
             if (img.parentElement.classList.contains('achievement-placeholder')) return;
 
             const card = img.closest('.cert-card');
@@ -499,25 +499,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const successMsg = document.getElementById('form-success-message');
     const resetFormBtn = document.getElementById('btn-reset-form');
 
+    // ⚠️ Replace the URL below with your Formspree endpoint.
+    // Sign up free at https://formspree.io, create a form, and paste the endpoint here.
+    // Example: 'https://formspree.io/f/xyzabc12'
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xlgknoqj';
+
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             const submitBtn = contactForm.querySelector('.btn-submit');
             const originalText = submitBtn.innerHTML;
-            
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span class="spinner" style="width: 16px; height: 16px; border-width: 2px; border-top-color: #fff; display: inline-block;"></span> Transmitting...';
 
-            setTimeout(() => {
-                
-                contactForm.classList.add('hidden');
-                successMsg.classList.remove('hidden');
-                
+            const name = document.getElementById('form-name').value.trim();
+            const email = document.getElementById('form-email').value.trim();
+            const subject = document.getElementById('form-subject').value.trim();
+            const message = document.getElementById('form-message').value.trim();
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner" style="width:16px;height:16px;border-width:2px;border-top-color:#fff;display:inline-block;"></span> Transmitting...';
+
+            try {
+                const response = await fetch(FORMSPREE_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({ name, email, subject, message })
+                });
+
+                if (response.ok) {
+                    contactForm.classList.add('hidden');
+                    successMsg.classList.remove('hidden');
+                    contactForm.reset();
+                } else {
+                    const data = await response.json();
+                    const errMsg = data.errors ? data.errors.map(e => e.message).join(', ') : 'Submission failed. Please try again or email directly.';
+                    alert('Error: ' + errMsg);
+                }
+            } catch (err) {
+                alert('Network error. Please check your connection or email me directly at shahussain891@gmail.com');
+            } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalText;
-                contactForm.reset();
-            }, 1200);
+            }
         });
 
         resetFormBtn.addEventListener('click', () => {
@@ -587,7 +610,7 @@ document.addEventListener('DOMContentLoaded', () => {
         chatInput.value = '';
 
         showTypingIndicator();
-        
+
         setTimeout(() => {
             removeTypingIndicator();
             const reply = getBotReply(text);
@@ -602,26 +625,26 @@ document.addEventListener('DOMContentLoaded', () => {
         if (queryType === 'core-skills') {
             userText = "What are your core technical skills?";
             botText = "Shahid specializes in:<br>" +
-                      "• <strong>ML & Statistics:</strong> PyTorch, Scikit-Learn, TensorFlow, RoBERTa<br>" +
-                      "• <strong>AI & GenAI:</strong> Large Language Models (LLMs), RAG pipelines, prompt engineering, agentic workflows<br>" +
-                      "• <strong>Languages:</strong> Python, SQL, Java<br>" +
-                      "• <strong>Deployment:</strong> Streamlit, FastAPI, AWS, Docker containers, CI/CD.";
+                "• <strong>ML & Statistics:</strong> PyTorch, Scikit-Learn, TensorFlow, RoBERTa<br>" +
+                "• <strong>AI & GenAI:</strong> Large Language Models (LLMs), RAG pipelines, prompt engineering, agentic workflows<br>" +
+                "• <strong>Languages:</strong> Python, SQL, Java<br>" +
+                "• <strong>Deployment:</strong> Streamlit, FastAPI, AWS, Docker containers, CI/CD.";
         } else if (queryType === 'projects') {
             userText = "Tell me about your projects.";
             botText = "Shahid has three major projects listed on his resume:<br>" +
-                      "1. <strong>Mood-Based Book Recommender:</strong> Sentiment classification using RoBERTa and cosine similarities deployed via Streamlit.<br>" +
-                      "2. <strong>Career AI Agent:</strong> A resume-aware roadmapper running skills gap evaluations.<br>" +
-                      "3. <strong>PackVote System:</strong> Multi-user consensus trip calculator employing cosine similarity algorithms and Google Gemini API.";
+                "1. <strong>Mood-Based Book Recommender:</strong> Sentiment classification using RoBERTa and cosine similarities deployed via Streamlit.<br>" +
+                "2. <strong>Career AI Agent:</strong> A resume-aware roadmapper running skills gap evaluations.<br>" +
+                "3. <strong>PackVote System:</strong> Multi-user consensus trip calculator employing cosine similarity algorithms and Google Gemini API.";
         } else if (queryType === 'education') {
             userText = "Where did you study?";
             botText = "Shahid is pursuing his B.Tech in Computer Science and Engineering at <strong>Lovely Professional University (LPU)</strong>, Punjab, graduating in 2026. He maintains a strong CGPA of <strong>7.4</strong>.";
         } else if (queryType === 'contact') {
             userText = "How can I contact you?";
             botText = "You can connect with Shahid directly via:<br>" +
-                      "• <strong>Email:</strong> <a href='mailto:shahussain891@gmail.com'>shahussain891@gmail.com</a><br>" +
-                      "• <strong>Phone:</strong> +91 9701105237<br>" +
-                      "• <strong>LinkedIn:</strong> <a href='https://www.linkedin.com/in/shahid-s/' target='_blank'>shahid-s</a><br>" +
-                      "• <strong>GitHub:</strong> <a href='https://github.com/Shahid12201307' target='_blank'>Shahid12201307</a>";
+                "• <strong>Email:</strong> <a href='mailto:shahussain891@gmail.com'>shahussain891@gmail.com</a><br>" +
+                "• <strong>Phone:</strong> +91 9701105237<br>" +
+                "• <strong>LinkedIn:</strong> <a href='https://www.linkedin.com/in/shahid-s/' target='_blank'>shahid-s</a><br>" +
+                "• <strong>GitHub:</strong> <a href='https://github.com/Shahid12201307' target='_blank'>Shahid12201307</a>";
         }
 
         appendMessage(userText, true);
