@@ -175,10 +175,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const typewriter = document.getElementById('typewriter');
     const roles = [
+        'AI / ML Engineer',
         'Data Scientist',
-        'AI / Machine Learning Engineer',
-        'NLP Specialist',
-        'LLM & RAG Developer'
+        'Full-Stack Developer'
     ];
     let roleIdx = 0;
     let charIdx = 0;
@@ -247,194 +246,6 @@ document.addEventListener('DOMContentLoaded', () => {
             skillTags.forEach(t => t.classList.remove('active'));
             tag.classList.add('active');
         });
-    });
-
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const targetTab = btn.getAttribute('data-tab');
-
-            tabBtns.forEach(b => b.classList.remove('active'));
-            tabContents.forEach(c => c.classList.remove('active'));
-
-            btn.classList.add('active');
-            document.getElementById(targetTab).classList.add('active');
-        });
-    });
-
-    const moodBtns = document.querySelectorAll('.mood-btn');
-    const recInput = document.getElementById('recommender-input');
-    const runRecBtn = document.getElementById('btn-run-recommender');
-    const recOutput = document.getElementById('recommender-output');
-    const loader = recOutput.querySelector('.inference-loader');
-    const results = recOutput.querySelector('.inference-results');
-
-    moodBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            moodBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            recInput.value = btn.getAttribute('data-text');
-        });
-    });
-
-    runRecBtn.addEventListener('click', () => {
-        const userText = recInput.value.trim();
-        if (!userText) {
-            alert("Please type a mood description or click a preset first!");
-            return;
-        }
-
-        recOutput.classList.remove('hidden');
-        loader.classList.remove('hidden');
-        results.classList.add('hidden');
-
-        setTimeout(() => {
-            loader.classList.add('hidden');
-            results.classList.remove('hidden');
-
-            let serenity = 10, melancholy = 10, excitement = 10, tension = 10;
-            let bookTitle = "Weapons of Math Destruction";
-            let bookAuthor = "Cathy O'Neil";
-            let bookDesc = "An analytical, eye-opening exploration of how algorithms and big data reinforce discrimination and damage society.";
-            let matchScore = "89.2%";
-
-            const lowerText = userText.toLowerCase();
-            if (lowerText.includes("stressed") || lowerText.includes("peace") || lowerText.includes("escape") || lowerText.includes("quiet")) {
-                serenity = 82; melancholy = 12; excitement = 4; tension = 2;
-                bookTitle = "The Hobbit";
-                bookAuthor = "J.R.R. Tolkien";
-                bookDesc = "Whisk away from modern stressors into the quiet green hills of the Shire and join Bilbo Baggins on a whimsical, cozy adventure.";
-                matchScore = "96.4%";
-            } else if (lowerText.includes("curious") || lowerText.includes("solve") || lowerText.includes("mystery") || lowerText.includes("brain") || lowerText.includes("learn")) {
-                serenity = 15; melancholy = 5; excitement = 68; tension = 12;
-                bookTitle = "Gödel, Escher, Bach: An Eternal Golden Braid";
-                bookAuthor = "Douglas Hofstadter";
-                bookDesc = "Explore the profound interconnections of cognitive science, mathematics, computer logic, and art in this mind-bending masterwork.";
-                matchScore = "94.8%";
-            } else if (lowerText.includes("emotional") || lowerText.includes("sad") || lowerText.includes("heart") || lowerText.includes("inspiring")) {
-                serenity = 25; melancholy = 60; excitement = 10; tension = 5;
-                bookTitle = "The Ocean at the End of the Lane";
-                bookAuthor = "Neil Gaiman";
-                bookDesc = "A deeply nostalgic, melancholic, and poetically written novel exploring memory, childhood loneliness, and quiet magic.";
-                matchScore = "92.1%";
-            }
-
-            document.getElementById('bar-serenity').style.width = `${serenity}%`;
-            document.getElementById('bar-melancholy').style.width = `${melancholy}%`;
-            document.getElementById('bar-excitement').style.width = `${excitement}%`;
-            document.getElementById('bar-tension').style.width = `${tension}%`;
-
-            document.getElementById('pct-serenity').textContent = `${serenity}%`;
-            document.getElementById('pct-melancholy').textContent = `${melancholy}%`;
-            document.getElementById('pct-excitement').textContent = `${excitement}%`;
-            document.getElementById('pct-tension').textContent = `${tension}%`;
-
-            document.getElementById('rec-book-title').textContent = bookTitle;
-            document.getElementById('rec-book-author').textContent = bookAuthor;
-            document.getElementById('rec-book-desc').textContent = bookDesc;
-            document.getElementById('rec-similarity').textContent = matchScore;
-
-        }, 1500);
-    });
-
-    const runRoadmapBtn = document.getElementById('btn-run-roadmap');
-    const roadmapOutput = document.getElementById('roadmap-output');
-    const rmLoader = roadmapOutput.querySelector('.inference-loader');
-    const rmResults = roadmapOutput.querySelector('.inference-results');
-
-    runRoadmapBtn.addEventListener('click', () => {
-        const targetRole = document.getElementById('target-role').value;
-        const currentSkill = document.getElementById('current-skill').value;
-
-        roadmapOutput.classList.remove('hidden');
-        rmLoader.classList.remove('hidden');
-        rmResults.classList.add('hidden');
-
-        setTimeout(() => {
-            rmLoader.classList.add('hidden');
-            rmResults.classList.remove('hidden');
-
-            let missingStr = "";
-            let verifiedStr = "";
-            let step1 = "", step2 = "", step3 = "";
-
-            if (targetRole === 'data-scientist') {
-                missingStr = "PyTorch, Advanced Statistics, HuggingFace Transformers";
-                if (currentSkill === 'python-only') {
-                    verifiedStr = "Python Scripting";
-                    step1 = "<strong>Phase 1 (Wrangling):</strong> Master NumPy, Pandas, SQL joins, and Exploratory Data Analysis (EDA).";
-                    step2 = "<strong>Phase 2 (Scikit-Learn):</strong> Train supervised models (regressions, trees), validation metrics, and feature selection.";
-                    step3 = "<strong>Phase 3 (Deep Learning & NLP):</strong> Study neural networks with PyTorch and fine-tune text models with HuggingFace.";
-                } else if (currentSkill === 'data-analyst') {
-                    verifiedStr = "Python, Pandas, SQL, Data Visualization";
-                    step1 = "<strong>Phase 1 (Math Foundations):</strong> Focus on probability distributions, hypothesis testing, and regression analysis.";
-                    step2 = "<strong>Phase 2 (Machine Learning):</strong> Study ensemble models, clustering algorithms, and model evaluation parameters.";
-                    step3 = "<strong>Phase 3 (DL & Deployment):</strong> Master PyTorch deep learning networks, and deploy Streamlit web prototypes.";
-                } else {
-                    verifiedStr = "Python, Pandas, ML Basics, Scikit-Learn";
-                    step1 = "<strong>Phase 1 (Advanced ML):</strong> Advanced feature engineering, hyperparameters optimization, and handling model drift.";
-                    step2 = "<strong>Phase 2 (Deep Learning):</strong> Core neural network structures in PyTorch, CNNs, and recurrent networks.";
-                    step3 = "<strong>Phase 3 (Transformers & NLP):</strong> Implement HuggingFace libraries, RoBERTa fine-tuning, and LLM text generation integrations.";
-                }
-            } else if (targetRole === 'mlops-engineer') {
-                missingStr = "Docker, CI/CD Pipelines, FastAPI, AWS cloud hosting";
-                verifiedStr = currentSkill === 'python-only' ? "Python foundations" : (currentSkill === 'data-analyst' ? "Python, SQL" : "Python, Scikit-Learn basics");
-
-                step1 = "<strong>Phase 1 (APIs & Containers):</strong> Learn FastAPI for writing backend inference routes and build Docker container images.";
-                step2 = "<strong>Phase 2 (AWS Deployments):</strong> Configure AWS EC2 instances, S3 storage buckets, and secure environment keys.";
-                step3 = "<strong>Phase 3 (CI/CD Automations):</strong> Integrate GitHub Actions to automate lints, tests, and auto-build docker containers on push.";
-            } else {
-                missingStr = "LLM APIs, Prompt Engineering, Vector Databases, RAG architectures";
-                verifiedStr = currentSkill === 'python-only' ? "Basic Python" : (currentSkill === 'data-analyst' ? "Python, Data Processing" : "Python, Scikit-Learn");
-
-                step1 = "<strong>Phase 1 (NLP Core):</strong> Learn tokenization, TF-IDF, bag-of-words, and cosine similarity rankings.";
-                step2 = "<strong>Phase 2 (LLM Architectures):</strong> Study transformer mechanisms, integrate Google Gemini API endpoints, and structure JSON responses.";
-                step3 = "<strong>Phase 3 (RAG Frameworks):</strong> Build Retrieval-Augmented Generation systems using semantic search vector databases.";
-            }
-
-            document.getElementById('roadmap-gap').textContent = missingStr;
-            document.getElementById('roadmap-verified').textContent = verifiedStr;
-            document.getElementById('step-1-text').innerHTML = step1;
-            document.getElementById('step-2-text').innerHTML = step2;
-            document.getElementById('step-3-text').innerHTML = step3;
-
-        }, 1800);
-    });
-
-    const runConsensusBtn = document.getElementById('btn-run-consensus');
-    const packvoteOutput = document.getElementById('packvote-output');
-    const pvLoader = packvoteOutput.querySelector('.inference-loader');
-    const pvResults = packvoteOutput.querySelector('.inference-results');
-
-    runConsensusBtn.addEventListener('click', () => {
-        packvoteOutput.classList.remove('hidden');
-        pvLoader.classList.remove('hidden');
-        pvResults.classList.add('hidden');
-
-        setTimeout(() => {
-            pvLoader.classList.add('hidden');
-            pvResults.classList.remove('hidden');
-
-            const vibe1 = document.getElementById('user1-vibe').value;
-            const budget1 = document.getElementById('user1-budget').value;
-            const vibe2 = document.getElementById('user2-vibe').value;
-            const budget2 = document.getElementById('user2-budget').value;
-            const vibe3 = document.getElementById('user3-vibe').value;
-            const budget3 = document.getElementById('user3-budget').value;
-
-            let itinerary = "Default trip: Morning beach walk, afternoon local cafe visits, evening campfire. Budget under 3,000 INR.";
-            if (vibe1 === 'beach' || vibe2 === 'beach' || vibe3 === 'beach') {
-                itinerary = "<strong>Day 1:</strong> Coast cliff hiking in Gokarna, tracking forest trails. <br><strong>Day 2:</strong> Relaxing sunset at Kudle Beach, enjoying local seafood. Budget optimized to low cost hostels.";
-            }
-            if ((vibe1 === 'heritage' || vibe2 === 'heritage' || vibe3 === 'heritage') && (vibe1 === 'adventure' || vibe2 === 'adventure' || vibe3 === 'adventure')) {
-                itinerary = "<strong>Day 1:</strong> Explore stone temples and ruins in Hampi by bicycle. <br><strong>Day 2:</strong> Sunrise bouldering hike up Anjanadri Hill. Budget kept within 1,200 INR per person for home stays.";
-            }
-
-            document.getElementById('consensus-itinerary-text').innerHTML = itinerary;
-
-        }, 1600);
     });
 
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -580,10 +391,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    function appendMessage(text, isUser = false) {
+    // Bot replies are trusted HTML written in this file; user text is always inserted as plain text.
+    function appendMessage(content, isUser = false) {
         const msgDiv = document.createElement('div');
         msgDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
-        msgDiv.innerHTML = `<div class="message-text">${text}</div>`;
+        const textDiv = document.createElement('div');
+        textDiv.className = 'message-text';
+        if (isUser) {
+            textDiv.textContent = content;
+        } else {
+            textDiv.innerHTML = content;
+        }
+        msgDiv.appendChild(textDiv);
         chatMessages.appendChild(msgDiv);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
@@ -618,69 +437,72 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }
 
+    const LINKS = {
+        github: "<a href='https://github.com/sha728' target='_blank' rel='noopener'>github.com/sha728</a>",
+        linkedin: "<a href='https://www.linkedin.com/in/shahid-s/' target='_blank' rel='noopener'>linkedin.com/in/shahid-s</a>",
+        leetcode: "<a href='https://leetcode.com/u/shahid00/' target='_blank' rel='noopener'>leetcode.com/u/shahid00</a>",
+        email: "<a href='mailto:shahussain891@gmail.com'>shahussain891@gmail.com</a>"
+    };
+
+    const ANSWERS = {
+        greeting: "Hello! Ask me about Shahid's skills, projects, experience, education, certifications or contact details.",
+        skills: "Shahid's main skills:<br>" +
+            "• <strong>LLMs &amp; NLP:</strong> LLM APIs, LLM evaluation, HuggingFace Transformers, Sentence-Transformers, spaCy, sqlglot<br>" +
+            "• <strong>Data &amp; ML:</strong> pandas, NumPy, scikit-learn, similarity ranking<br>" +
+            "• <strong>Languages:</strong> Python, SQL, C#, JavaScript, TypeScript<br>" +
+            "• <strong>Backend &amp; Frontend:</strong> ASP.NET Core, FastAPI, PostgreSQL, React, Streamlit<br>" +
+            "• <strong>DevOps &amp; Testing:</strong> Docker Compose, GitHub Actions, pytest, xUnit",
+        projects: "Shahid's projects:<br>" +
+            "1. <strong>QueryMind:</strong> natural language to safe, read-only SQL. 81.1% execution accuracy on the Spider 1.0 dev set; 152/152 unsafe statements blocked.<br>" +
+            "2. <strong>PackVote:</strong> group travel recommender with cosine-similarity matching, fairness-aware ranking and Gemini itineraries.<br>" +
+            "3. <strong>Career AI Agent:</strong> résumé + GitHub analysis that builds a prioritised learning roadmap.<br>" +
+            "4. <strong>Mood-Based Book Recommender:</strong> pretrained DistilRoBERTa emotion labels on 6,810 books.<br>" +
+            "Details and code links are in the Projects section.",
+        experience: "Shahid is an <strong>Engineering Intern at eTrilliumtech Technologies</strong> (2026 – present). He built the Apex Gym Management System (ASP.NET Core, PostgreSQL, React, 55 xUnit tests) and works on Lawsome, a team-built practice-management platform for law firms.",
+        education: "B.Tech in Computer Science &amp; Engineering, <strong>Lovely Professional University</strong> (2022–2026), minor in DevOps Engineering, CGPA <strong>7.56</strong>.",
+        certifications: "Certifications: <strong>IBM Data Science Methodology</strong>, <strong>IBM Big Data 101</strong>, <strong>Deloitte Data Analytics Job Simulation</strong>, <strong>iHUB DivyaSampark (IIT Roorkee) Machine Learning &amp; Its Applications</strong> and <strong>LinkedIn Learning NLP with Python</strong>. See the Credentials section.",
+        contact: "You can reach Shahid via:<br>• Email: " + LINKS.email + "<br>• Phone: +91 9701105237<br>• LinkedIn: " + LINKS.linkedin + "<br>• GitHub: " + LINKS.github + "<br>• LeetCode: " + LINKS.leetcode,
+        hiring: "Shahid is looking for full-time AI/ML, data science and full-stack roles in Bengaluru, Hyderabad, Mumbai or Chennai. Download the résumé from the About section or use the contact form.",
+        fallback: "I only have pre-written answers. Try asking about <strong>skills</strong>, <strong>projects</strong>, <strong>experience</strong>, <strong>education</strong>, <strong>certifications</strong> or <strong>contact</strong>, or use the buttons below."
+    };
+
+    const QUICK_QUERIES = {
+        'core-skills': ["What are your core technical skills?", 'skills'],
+        'projects': ["Tell me about your projects.", 'projects'],
+        'experience': ["What is your work experience?", 'experience'],
+        'education': ["Where did you study?", 'education'],
+        'contact': ["How can I contact you?", 'contact']
+    };
+
     function handleQuickQuery(queryType) {
-        let userText = "";
-        let botText = "";
-
-        if (queryType === 'core-skills') {
-            userText = "What are your core technical skills?";
-            botText = "Shahid specializes in:<br>" +
-                "• <strong>ML & Statistics:</strong> PyTorch, Scikit-Learn, TensorFlow, RoBERTa<br>" +
-                "• <strong>AI & GenAI:</strong> Large Language Models (LLMs), RAG pipelines, prompt engineering, agentic workflows<br>" +
-                "• <strong>Languages:</strong> Python, SQL, Java<br>" +
-                "• <strong>Deployment:</strong> Streamlit, FastAPI, AWS, Docker containers, CI/CD.";
-        } else if (queryType === 'projects') {
-            userText = "Tell me about your projects.";
-            botText = "Shahid has three major projects listed on his resume:<br>" +
-                "1. <strong>Mood-Based Book Recommender:</strong> Sentiment classification using RoBERTa and cosine similarities deployed via Streamlit.<br>" +
-                "2. <strong>Career AI Agent:</strong> A resume-aware roadmapper running skills gap evaluations.<br>" +
-                "3. <strong>PackVote System:</strong> Multi-user consensus trip calculator employing cosine similarity algorithms and Google Gemini API.";
-        } else if (queryType === 'education') {
-            userText = "Where did you study?";
-            botText = "Shahid is pursuing his B.Tech in Computer Science and Engineering at <strong>Lovely Professional University (LPU)</strong>, Punjab, graduating in 2026. He maintains a strong CGPA of <strong>7.4</strong>.";
-        } else if (queryType === 'contact') {
-            userText = "How can I contact you?";
-            botText = "You can connect with Shahid directly via:<br>" +
-                "• <strong>Email:</strong> <a href='mailto:shahussain891@gmail.com'>shahussain891@gmail.com</a><br>" +
-                "• <strong>Phone:</strong> +91 9701105237<br>" +
-                "• <strong>LinkedIn:</strong> <a href='https://www.linkedin.com/in/shahid-s/' target='_blank'>shahid-s</a><br>" +
-                "• <strong>GitHub:</strong> <a href='https://github.com/Shahid12201307' target='_blank'>Shahid12201307</a>";
-        }
-
-        appendMessage(userText, true);
+        const entry = QUICK_QUERIES[queryType];
+        if (!entry) return;
+        appendMessage(entry[0], true);
         showTypingIndicator();
         setTimeout(() => {
             removeTypingIndicator();
-            appendMessage(botText);
-        }, 800);
+            appendMessage(ANSWERS[entry[1]]);
+        }, 600);
     }
+
+    // Whole-word matching, so "this" or "machine" no longer trigger the greeting.
+    const INTENTS = [
+        ['contact', /\b(contact|email|e-mail|phone|call|reach|github|linkedin|leetcode)\b/],
+        ['hiring', /\b(job|jobs|hire|hiring|recruit\w*|role|roles|available|availability|opening)\b/],
+        ['projects', /\b(projects?|querymind|sql|packvote|travel|career|book|books|recommender)\b/],
+        ['experience', /\b(experience|intern|internship|work|company|etrilliumtech|gym|lawsome)\b/],
+        ['education', /\b(education|college|university|lpu|cgpa|gpa|degree|b\.?tech|study|studied)\b/],
+        ['certifications', /\b(certif\w*|ibm|deloitte|ihub|course|courses)\b/],
+        ['skills', /\b(skills?|stack|languages?|python|react|dotnet|tools?|tech)\b|\.net|c#/],
+        ['greeting', /^\s*(hi|hello|hey|hii+|namaste)\b/]
+    ];
 
     function getBotReply(inputText) {
         const txt = inputText.toLowerCase();
-
-        if (txt.includes('hello') || txt.includes('hi') || txt.includes('hey')) {
-            return "Hello! I can tell you all about Shahid's experience, skill set, and credentials. What would you like to explore?";
+        for (const [key, pattern] of INTENTS) {
+            if (pattern.test(txt)) return ANSWERS[key];
         }
-        if (txt.includes('skill') || txt.includes('language') || txt.includes('python') || txt.includes('pytorch') || txt.includes('sql')) {
-            return "Shahid is highly proficient in <strong>Python</strong>, <strong>SQL</strong>, and <strong>Java</strong>. For machine learning, he works extensively with <strong>PyTorch</strong>, <strong>scikit-learn</strong>, and <strong>HuggingFace</strong> models (specifically RoBERTa). He also develops agentic GenAI architectures with the <strong>Google Gemini API</strong>.";
-        }
-        if (txt.includes('project') || txt.includes('book') || txt.includes('career') || txt.includes('packvote') || txt.includes('travel')) {
-            return "Shahid's main projects include a <strong>Mood-Based Book Recommender</strong> (sentiment classification via RoBERTa), a <strong>Career AI Agent</strong> (resume gap parser), and <strong>PackVote</strong> (group travel preference voting using Gemini API and cosine similarity). You can try simulations of all three in the <strong>Demos</strong> section above!";
-        }
-        if (txt.includes('education') || txt.includes('college') || txt.includes('university') || txt.includes('lpu') || txt.includes('cgpa')) {
-            return "Shahid is studying Computer Science & Engineering at <strong>Lovely Professional University (LPU)</strong>, Punjab (batch of 2022-2026), and holds a <strong>7.4 CGPA</strong>. He finished his intermediate 12th grade at Narayana Junior College, Tirupati with <strong>83%</strong>.";
-        }
-        if (txt.includes('certif') || txt.includes('ibm') || txt.includes('course') || txt.includes('deloitte') || txt.includes('ihub')) {
-            return "Shahid holds credentials including **IBM Data Science Methodology**, **IBM Big Data 101**, **Deloitte Data Analytics Job Simulation**, **iHUB IIT Roorkee Machine Learning**, and **LinkedIn Learning NLP with Python**. You can filter and click to view them in the Credentials section!";
-        }
-        if (txt.includes('contact') || txt.includes('email') || txt.includes('phone') || txt.includes('call') || txt.includes('github') || txt.includes('linkedin')) {
-            return "You can reach Shahid via:<br>• Email: <a href='mailto:shahussain891@gmail.com'>shahussain891@gmail.com</a><br>• Phone: +91 9701105237<br>• LinkedIn: <a href='https://www.linkedin.com/in/shahid-s/' target='_blank'>shahid-s</a><br>• GitHub: <a href='https://github.com/Shahid12201307' target='_blank'>Shahid12201307</a>";
-        }
-        if (txt.includes('job') || txt.includes('intern') || txt.includes('hire') || txt.includes('recruit')) {
-            return "Yes! Shahid is actively seeking Data Scientist, ML Engineer, or GenAI Developer internship and full-time opportunities. You can download his resume PDF from the About section or send him an inquiry via the Contact Form!";
-        }
-
-        return "I'm a local assistant modeled on Shahid's resume. I recommend checking out his **Interactive Project Playgrounds** on this page or clicking the quick suggestion tags below to get instant answers!";
+        return ANSWERS.fallback;
     }
 
 });
