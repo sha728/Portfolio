@@ -1,0 +1,161 @@
+%-------------------------------------------------------------
+% Shaik Shahid Hussain - Resume
+% Compile with pdfLaTeX on Overleaf. One page.
+% Every claim here is checked against the code in github.com/sha728.
+%-------------------------------------------------------------
+\documentclass[letterpaper,10.5pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.6in}
+\addtolength{\textheight}{1.2in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+%----------------- Custom commands -----------------
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.98\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \small #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%===========================================================
+\begin{document}
+
+%----------------- Heading -----------------
+\begin{center}
+    \textbf{\Huge \scshape Shaik Shahid Hussain} \\ \vspace{3pt}
+    \small Bengaluru, India $|$ +91 9701105237 $|$
+    \href{mailto:shahussain891@gmail.com}{shahussain891@gmail.com} $|$
+    \href{https://portfolio-4aq6.vercel.app}{portfolio-4aq6.vercel.app} \\
+    \href{https://github.com/sha728}{github.com/sha728} $|$
+    \href{https://www.linkedin.com/in/shahid-s/}{linkedin.com/in/shahid-s} $|$
+    \href{https://leetcode.com/u/shahid00/}{leetcode.com/u/shahid00}
+\end{center}
+
+\vspace{-6pt}
+\small{Computer science graduate and engineering intern who builds AI and full-stack systems end to end. Built a text-to-SQL engine that reaches 81.1\% execution accuracy on the Spider 1.0 dev set, with a safety layer that blocks every unsafe statement in its test corpus.}
+
+%----------------- Education -----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Lovely Professional University}{2022 -- 2026}
+      {B.Tech in Computer Science and Engineering, Minor in DevOps Engineering}{CGPA: 7.56}
+    \resumeSubheading
+      {Narayana Junior College, Tirupati}{2021 -- 2022}
+      {Intermediate (Class XII)}{83\%}
+  \resumeSubHeadingListEnd
+
+%----------------- Experience -----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+    % TODO: replace "2026" with the exact start month (first commit in the gym repo is 31 Aug 2026).
+    \resumeSubheading
+      {Engineering Intern}{2026 -- Present}
+      {eTrilliumtech Technologies}{Bengaluru}
+      \resumeItemListStart
+        \resumeItem{Trained in .NET, MongoDB, PostgreSQL, JavaScript and React; applied them on company projects.}
+        \resumeItem{Built \textbf{Apex Gym Management System} in about two weeks: ASP.NET Core Web API (.NET 10), EF Core on PostgreSQL, JWT role-based auth (Admin, Member), React 19 + Vite frontend, Docker Compose. \href{https://github.com/sha728/gym-management-system}{\underline{Code}}}
+        \resumeItem{Wrote \textbf{55 xUnit tests} covering authentication, authorization, bookings (time conflicts, duplicate bookings, ownership), sessions and trainers.}
+        % TODO: replace this bullet with your concrete Lawsome contribution (what you built, with which tech).
+        \resumeItem{Team member on \textbf{Lawsome}, a practice-management platform for law firms (cases, hearings, clients, live eCourts integration) built with spec-driven development.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%----------------- Projects -----------------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/sha728/querymind}{QueryMind}} $|$ \emph{Python, sqlglot, LLMs, ASP.NET Core, React, TypeScript, PostgreSQL, Docker}}{Oct 2026}
+          \resumeItemListStart
+            \resumeItem{Natural-language questions to safe, read-only SQL, results and a chart. \textbf{81.1\% execution accuracy (839/1,034)} on the full Spider 1.0 dev set, zero-shot with gpt-oss-120b, scored with the official Spider matcher in a reproducible harness.}
+            \resumeItem{Safety independent of the prompt: a sqlglot AST validator allows only a single SELECT and blocks \textbf{152/152} unsafe test statements; queries run under a read-only role and transaction with a timeout and row cap.}
+            \resumeItem{Five services (React UI, ASP.NET Core API, Python engine, two PostgreSQL databases) started with one \texttt{docker compose up}; GitHub Actions CI with lint, unit and end-to-end jobs.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/sha728/PackVoted}{PackVote}} $|$ \emph{Python, FastAPI, PostgreSQL, React, Gemini API, Docker}}{Jan 2026 -- Mar 2026}
+          \resumeItemListStart
+            \resumeItem{Group travel recommender over 95 Indian destinations: hard-constraint filtering (budget, avoided places, trip length) and cosine-similarity vibe matching.}
+            \resumeItem{Fairness-aware ranking: 70\% group score + 30\% least-satisfied member, with a penalty when anyone scores below 30\%; Gemini generates day-by-day itineraries from Open-Meteo forecasts.}
+            \resumeItem{Co-authored an IEEE-format paper describing the system.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/sha728/Career-Ai-Agent}{Career AI Agent}} $|$ \emph{Python, spaCy, Sentence-Transformers, GitHub REST API, Streamlit}}{Nov 2025 -- Dec 2025}
+          \resumeItemListStart
+            \resumeItem{Builds a prioritised learning roadmap from a PDF r\'esum\'e and the candidate's GitHub: spaCy skill extraction, Sentence-Transformers normalisation onto a skill ontology, GitHub language and activity signals.}
+            \resumeItem{Rule-based recommender infers a target role and ranks skill gaps by confidence, role weight and activity.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/sha728/Book-Recommendation-System}{Mood-Based Book Recommender}} $|$ \emph{Python, HuggingFace Transformers, pandas, Streamlit, Docker}}{Jan 2025 -- Feb 2025}
+          \resumeItemListStart
+            \resumeItem{Labelled 6,810 book descriptions with a pretrained DistilRoBERTa emotion classifier; recommends the highest-rated books matching the reader's chosen mood.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%----------------- Skills -----------------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, SQL, C\#, JavaScript, TypeScript, HTML/CSS} \\
+     \textbf{AI / ML / NLP}{: LLM APIs (Gemini, gpt-oss), LLM evaluation (Spider), HuggingFace Transformers, Sentence-Transformers, spaCy, sqlglot, scikit-learn, pandas, NumPy} \\
+     \textbf{Backend \& Frontend}{: ASP.NET Core, EF Core, FastAPI, PostgreSQL, MongoDB, React, Vite, Streamlit} \\
+     \textbf{DevOps \& Testing}{: Docker, Docker Compose, GitHub Actions, pytest, xUnit, Git, Vercel}
+    }}
+ \end{itemize}
+ \vspace{-12pt}
+
+%----------------- Certifications & Achievements -----------------
+\section{Certifications \& Achievements}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Certifications}{: IBM Data Science Methodology (2026); IBM Big Data 101 (2026); Deloitte Data Analytics Job Simulation (2026); Machine Learning \& Its Applications, iHUB DivyaSampark, IIT Roorkee (2024); NLP with Python for Machine Learning, LinkedIn Learning (2023)} \\
+     \textbf{Achievements}{: 600+ problems solved on LeetCode; Runner-Up, Group Discussion Competition, LPU (2025); Runner-Up, Critical Thinking Challenge, LPU (2023)}
+    }}
+ \end{itemize}
+
+\end{document}
